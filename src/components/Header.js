@@ -4,8 +4,13 @@ import styled from "styled-components";
 
 const HeaderContainer = styled.div`
 background-color: #333;
-padding: 10px 0;
+padding: 15px 30px;
 text-align: center;
+border-radius: 20px;
+width: 40%;
+margin: auto auto;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
 `;
 
 const NavLink = styled(Link)`

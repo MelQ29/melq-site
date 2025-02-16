@@ -3,7 +3,6 @@ import styled, { createGlobalStyle } from "styled-components";
 import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
 import ProjectSlider from "./components/ProjectSlider";
-import Links from "./components/Links";
 import Footer from "./components/Footer";
 import backgroundImage from "./assets/images/background.jpg";
 
@@ -66,7 +65,6 @@ return (
      <Header />
      <AppContainer>
         <Section id="home">
-
         </Section>
         <Section id="about">
          <AboutMe />
@@ -75,7 +73,6 @@ return (
          <ProjectSlider />
         </Section>
         <Section id="links">
-         <Links />
         </Section>
         <Footer />
      </AppContainer>

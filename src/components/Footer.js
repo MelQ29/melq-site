@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import telegramIcon from "../assets/images/icons/telegram.png";
+import twitchIcon from "../assets/images/icons/twitch.png";
+import githubIcon from "../assets/images/icons/github.png";
+import DiscordIcon from "../assets/images/icons/discord.png";
 
 const FooterContainer = styled.footer`
   margin-top: 40px;
@@ -20,6 +24,14 @@ const FooterLink = styled.a`
   }
 `;
 
+const Icon = styled.img`
+     width: 24px;
+     height: 24px;
+     vertical-align: middle;
+     margin-left: 5px;
+     margin: 0 5px;
+`;
+
 const Footer = () => {
   return (
     <FooterContainer>
@@ -28,6 +40,7 @@ const Footer = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
+        <Icon src={telegramIcon} alt="Telegram" />
         Telegram
       </FooterLink>
       |
@@ -36,6 +49,7 @@ const Footer = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
+        <Icon src={twitchIcon} alt="Twitch" />
         Twitch
       </FooterLink>
       |
@@ -44,7 +58,17 @@ const Footer = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
+        <Icon src={githubIcon} alt="GitHub" />
         GitHub
+      </FooterLink>
+      |
+      <FooterLink
+        href="https://discordapp.com/users/MelQ29"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Icon src={DiscordIcon} alt="Discord" />
+        Discord
       </FooterLink>
     </FooterContainer>
   );
