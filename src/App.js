@@ -4,30 +4,20 @@ import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
 import ProjectSlider from "./components/ProjectSlider";
 import Footer from "./components/Footer";
-import backgroundImage from "./assets/images/background.jpg";
+//import backgroundImage from "./assets/images/background.jpg";
+import { motion } from "framer-motion";
 
 // Глобальные стили
 const GlobalStyle = createGlobalStyle`
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: url(${backgroundImage}) no-repeat center center fixed;
-    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #151515, #1d1d1d, #222);
     color: #e6e6e6;
-    position: relative;
-    z-index: 1;
-}
-
-body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(26, 26, 26, 0.76); /* Полупрозрачный черный слой */
-    z-index: -1;
-}
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
 
 a {
     color: rgb(255, 0, 0);
@@ -36,26 +26,38 @@ a {
 }
 
 a:hover {
-    color: rgb(200, 0, 0); /* Красный цвет при наведении */
     text-decoration: underline;
-}
+    color: #ff4d4d;
+  }
 
 h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
     color: #fff;
+  }
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
 }
 `;
 
+
+
 const AppContainer = styled.div`
-max-width: 800px;
-margin: 0 auto;
-padding: 20px;
-position: relative;
-z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
-/* Расстояние между блоками */
-const Section = styled.div`
-margin-bottom: 100px;
+const Section = styled(motion.div)`
+  margin-bottom: 50px;
+  flex: 1;
 `;
 
 const App = () => {
@@ -63,19 +65,17 @@ return (
     <>
      <GlobalStyle />
      <Header />
-     <AppContainer>
-        <Section id="home">
+      <AppContainer>
+        <Section id="home" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5 }}>
         </Section>
-        <Section id="about">
+        <Section id="about" initial={{ opacity: 0 }} animate={{ opacity: 1, y: [50, 0] }} transition={{ duration: 1 }}>
          <AboutMe />
         </Section>
-        <Section id="projects">
+        <Section id="projects" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
          <ProjectSlider />
         </Section>
-        <Section id="links">
-        </Section>
+        </AppContainer>
         <Footer />
-     </AppContainer>
     </>
 );
 };

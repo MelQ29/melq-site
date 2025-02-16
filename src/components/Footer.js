@@ -6,11 +6,12 @@ import githubIcon from "../assets/images/icons/github.png";
 import DiscordIcon from "../assets/images/icons/discord.png";
 
 const FooterContainer = styled.footer`
-  margin-top: 40px;
+  margin: 0 auto;
   text-align: center;
-  padding: 10px 0;
-  background-color:rgba(36, 36, 36, 0.89);
-  border-radius: 8px;
+  padding: 20px 10px;
+  background: linear-gradient(to bottom, #151515, #1d1d1d, #222); 
+  border-top: 1px solid rgba(255, 255, 255, 0.1); 
+  max-width: 800px;
 `;
 
 const FooterLink = styled.a`
@@ -20,21 +21,21 @@ const FooterLink = styled.a`
   transition: color 0.2s;
 
   &:hover {
-    color:rgb(200, 0, 0);
+    color: rgb(200, 0, 0);
   }
 `;
 
 const Icon = styled.img`
-     width: 24px;
-     height: 24px;
-     vertical-align: middle;
-     margin-left: 5px;
-     margin: 0 5px;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  margin-left: 5px;
+  margin: 0 5px;
 `;
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <FooterContainer id="footer">
       <FooterLink
         href="https://t.me/melq29"
         target="_blank"
